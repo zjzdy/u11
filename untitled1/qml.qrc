@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CornerPoint.qml</file>
+        <file>images/circular218.png</file>
+    </qresource>
+</RCC>
