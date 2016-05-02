@@ -213,6 +213,24 @@ int crop::hough(QString imagepath)
     int thresh = otsu(&IplmagImg);
     qDebug()<<thresh;
 
+	/*
+    vector<Vec4i> lines; 
+    // 检测直线，最小投票为90，线条不短于50，间隙不小于10 
+    HoughLinesP(magImg,lines,1,pi180,HOUGH_VOTE,70,10); 
+	Scalar color = Scalar(0,255,0);
+    // 将检测到的直线在图上画出来 
+    vector<Vec4i>::const_iterator it=lines.begin(); 
+    Mat linImg(magImg.size(),CV_8UC3);
+    while(it!=lines.end()) 
+    { 
+        Point pt1((*it)[0],(*it)[1]); 
+        Point pt2((*it)[2],(*it)[3]); 
+        line(linImg,pt1,pt2,color,2); //  线条宽度设置为2 
+        ++it; 
+    } 
+	imwrite("imageText_line.jpg",linImg);
+
+*/
     //Turn into binary image
     threshold(magImg,magImg,thresh+52,255,CV_THRESH_BINARY);
     imwrite("imageText_bin.jpg",magImg);
